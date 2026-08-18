@@ -1,0 +1,22 @@
+services:
+  backend:
+    build: ./NetsimStokAPI
+    ports:
+      - "5175:5175"
+    environment:
+      - Netsim__WsepBaseUrl=http://host.docker.internal:82/crud/
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+
+  tahmin:
+    build: ./netsim_tahmin
+    ports:
+      - "8000:8000"
+
+  web:
+    build: ./staj_proje
+    ports:
+      - "8080:80"
+    depends_on:
+      - backend
+      - tahmin

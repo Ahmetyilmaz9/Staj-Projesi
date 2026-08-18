@@ -1,0 +1,13 @@
+**/bin/
+**/obj/
+venv/
+__pycache__/
+*.pyc
+**/build/
+**/.dart_tool/
+**/android/.gradle/
+**/android/local.properties
+*.fdb
+appsettings.Development.json
+.vs/
+.idea/
